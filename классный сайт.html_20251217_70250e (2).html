@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoWorld - Мир автомобилей</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Шапка с логотипом */
+        header {
+            background-color: #1a1a1a;
+            padding: 20px 0;
+            color: white;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo-icon {
+            color: #ff6b00;
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        /* Навигация */
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-btn {
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background-color: #e55a00;
+        }
+        
+        
+        .main-content {
+            display: flex;
+            gap: 40px;
+            margin: 40px 0;
+            align-items: center;
+        }
+        
+        .main-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .main-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .main-info {
+            flex: 1;
+        }
+        
+        .main-info h1 {
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+        
+        .main-info p {
+            margin-bottom: 25px;
+            color: #555;
+        }
+        
+        .info-btn {
+            background-color: #1a1a1a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .info-btn:hover {
+            background-color: #333;
+        }
+        
+        
+        .more-info {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border-left: 4px solid #ff6b00;
+        }
+        
+        
+        .image-row {
+            margin: 60px 0;
+        }
+        
+        .row-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .image-item {
+            text-align: center;
+        }
+        
+        .image-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        
+        .second-image-row {
+            margin: 60px 0;
+        }
+        
+        
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: #ff6b00;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-column p, .footer-column ul {
+            color: #ccc;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-car logo-icon"></i>
+                <span>AutoWorld</span>
+            </div>
+            
+           
+            <nav>
+                <button class="nav-btn">Главная</button>
+                <button class="nav-btn">Каталог</button>
+                <button class="nav-btn">Контакты</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+       
+        <section class="main-content">
+            <div class="main-image">
+                <img src="https://th.bing.com/th/id/OSK.fdce81067c6037f40225e4231255badc?w=141&h=97&o=6&cb=ucfimg1&dpr=1.3&pid=SANGAM&ucfimg=1" alt="Спортивный автомобиль">
+            </div>
+            <div class="main-info">
+                <h1>Мир автомобилей будущего</h1>
+                <p>Откройте для себя инновационные технологии в автомобилестроении. Электромобили, автономное вождение, умные системы безопасности - всё это уже стало реальностью.</p>
+                <p>Наш сайт посвящен самым современным и технологичным автомобилям, которые меняют представление о передвижении.</p>
+                <button class="info-btn" id="moreInfoBtn">Узнать больше</button>
+                <div class="more-info" id="moreInfo">
+                    <h3>Дополнительная информация</h3>
+                    <p>Современные автомобили оснащены продвинутыми системами помощи водителю, электродвигателями с большим запасом хода и подключением к интернету. Многие производители уже выпускают автомобили с 3-м уровнем автономности.</p>
+                    <p>Будущее автомобильной промышленности - это полная электрификация, автономное вождение и интеграция с умными городами. К 2030 году ожидается, что более 50% новых автомобилей будут электрическими.</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="image-row">
+            <h2 class="row-title">Популярные категории</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.ox0_bhsQYX8kz5uWkbazJgHaEU?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Внедорожник">
+                    <h3>Внедорожники</h3>
+                    <p>Мощные автомобили для любых дорог и условий</p>
+                </div>
+                <div class="image-item">
+                    <img src="https://th.bing.com/th/id/OIP.LZ_YjPwaLLNwOjDQ5bQcEwHaFj?w=198&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1" alt="Спортивный автомобиль">
+                    <h3>Спорткары</h3>
+                    <p>Высокая скорость и динамика для настоящих ценителей</p>
+                </div>
+                <div class="image-item">
+                    <img src="data:image/webp;base64,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" alt="Электромобиль">
+                    <h3>Электромобили</h3>
+                    <p>Экологичный транспорт будущего</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="second-image-row">
+            <h2 class="row-title">Технологии будущего</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="https://th.bing.com/th/id/OIP.jGb1zFVlJ4J8brOBu_8VswHaEK?w=315&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1" alt="Автономное вождение">
+                    <h3>Автономное вождение</h3>
+                    <p>Технологии, которые делают вождение безопаснее</p>
+                </div>
+                <div class="image-item">
+                    <img src="https://th.bing.com/th/id/OIP.P9jFKXwRiBCx3aH875M6DQHaFE?w=257&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1" alt="Электрический двигатель">
+                    <h3>Электродвигатели</h3>
+                    <p>Мощные и эффективные системы привода</p>
+                </div>
+                <div class="image-item">
+                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Умный салон">
+                    <h3>Умный салон</h3>
+                    <p>Интерактивные системы для комфорта водителя</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Автомобильная, 15</p>
+                    <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@autoworld.ru</p>
+                    <p><i class="fas fa-clock"></i> Пн-Пт: 9:00-20:00</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>О нас</h3>
+                    <p>AutoWorld - это информационный портал о современных автомобилях и технологиях. Мы рассказываем о новинках автомобильной промышленности, проводим обзоры и сравнения.</p>
+                    <p>Наша миссия - помочь вам выбрать идеальный автомобиль для ваших нужд.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Полезные ссылки</h3>
+                    <ul>
+                        <li><a href="#" style="color: #ccc; text-decoration: none;">Новости автоиндустрии</a></li>
+                        <li><a href="#" style="color: #ccc; text-decoration: none;">Обзоры автомобилей</a></li>
+                        <li><a href="#" style="color: #ccc; text-decoration: none;">Сравнение моделей</a></li>
+                        <li><a href="#" style="color: #ccc; text-decoration: none;">Советы по уходу</a></li>
+                        <li><a href="#" style="color: #ccc; text-decoration: none;">Форум автолюбителей</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        document.getElementById('moreInfoBtn').addEventListener('click', function() {
+            const moreInfo = document.getElementById('moreInfo');
+            if (moreInfo.style.display === 'block') {
+                moreInfo.style.display = 'none';
+                this.textContent = 'Узнать больше';
+            } else {
+                moreInfo.style.display = 'block';
+                this.textContent = 'Скрыть информацию';
+            }
+        });
+
+        
+        document.querySelectorAll('.nav-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Навигация: ' + this.textContent);
+            });
+        });
+    </script>
+</body>
+</html>
